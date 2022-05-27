@@ -10,9 +10,9 @@ public class ConnectionDatabase {
 	public static Connection createConnection() {
 		try {
 			
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/opds","root","Amanverma@01");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/opds?autoReconnect=true&useSSL=false","root","Amanverma@01");
 			
 		}
 		catch(Exception e){
