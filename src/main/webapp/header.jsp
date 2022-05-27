@@ -15,7 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <!--CSS Script-->
-    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="css/menu.css">
 </head>
 
 <body>
@@ -23,11 +23,12 @@
         <nav class="navbar">
             <!-- <input type="checkbox" id="check"> -->
             <!-- <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label> -->
-            <img class="logo" src="../img/output-onlinepngtools (10).png" style="width: 10%;">
+            <img class="logo" src="img/output-onlinepngtools (10).png" style="width: 10%;">
             <ul>
-                <li class=" nav_item"><a href="Adminehome.jsp">Home</a></li>
-                <li class="nav_item"><a href="addNewStore.jsp">Add New Store</a></li>
-                <li class="nav_item"><a href="addNewPizza.jsp">Add New Pizza</a></li>
+                <li class=" nav_item"><a href="home.jsp">Home</a></li>
+                <li class="nav_item"><a href="adminsignin.html">ADMIN</a></li>
+                <li class="nav_item"><a href="storeLoc.html">Store</a></li>
+                <li class="nav_item"><a href="cart.jsp">cart</a></li>
                 <li class="nav_item"><a href="index.jsp">logout</a></li>
             </ul>
         </nav>

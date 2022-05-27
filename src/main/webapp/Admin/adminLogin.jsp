@@ -18,7 +18,7 @@
 <body class="adminpage">
   <!--navbar Section-->
   <header>
-    <nav class="navbar">
+    <nav class="navbar" style="background-color:#fac664">
       <input type="checkbox" id="check">
       <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
       <img class="logo" src="../img/logo.png" style="width: 10%;">

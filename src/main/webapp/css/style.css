@@ -16,18 +16,7 @@ body{
     background: #e9d6cd;
     overflow: hidden;
 }
-.navbar{
-	height:80px;
-	background-color:yellow;
-}
-.flex{
-	display:flex;
-	list-style:none;
-	float:right;
-}
-.flex > li{
-	padding:20px;
-}
+
 .frontimage {
   position: absolute;
   bottom: 0;
@@ -46,12 +35,10 @@ body{
   }
 }
 
-nav{
-  background: #fac664;
+.navbar{
+	background: #fac664;
   height: 80px;
   width: 100%;
-}
-.navbar{
   display: block;
   padding-top: 0%;
   padding-bottom: 0%;

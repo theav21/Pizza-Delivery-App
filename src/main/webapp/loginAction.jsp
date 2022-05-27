@@ -12,7 +12,7 @@
 		while(rs.next()){
 			i=1;
 			session.setAttribute("email",email);
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("home.jsp");
 		}
 		if(i==0)
 			response.sendRedirect("signup.jsp?msg=notExist");
