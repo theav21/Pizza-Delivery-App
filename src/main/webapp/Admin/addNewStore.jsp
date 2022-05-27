@@ -11,20 +11,19 @@
 	String msg=request.getParameter("msg");
 	if("done".equals(msg)){
 	%>
-	<h1>Pizza Added!</h1>
+	<h1>Store Added!</h1>
 	<%} %>
 	<%
 	if("undone".equals(msg)){
 	%>
 	<h1>Something went wrong!</h1>
 	<%} %>
-	
 	<%
 	int id = 1;
 	try{
 		Connection con = ConnectionDatabase.createConnection();
 		Statement st = con.createStatement();
-		ResultSet rs=st.executeQuery("select max(id) from pizza_items");
+		ResultSet rs=st.executeQuery("select max(id) from stores");
 		while(rs.next())
 		{
 			id=rs.getInt(1);
@@ -37,24 +36,23 @@
 	%>
 	
 	<div class="container">
-	<form action="addNewPizzaAction.jsp" method="post">
+	
+	<form action="addNewStoreAction.jsp" method="post">
 	<h1 style="text-align:center;margin-top:20px">Add New Pizza</h1>
-	<h3 style="text-align:center;margin-top:50px">Pizza ID: <% out.println(id); %></h3>
+	<h3 style="text-align:center;margin-top:50px">Store ID: <% out.println(id); %></h3>
 		<input type="hidden" name="id" value="<%out.println(id); %>">
 		<br>
-		Enter Name<input class="form-control form-control-lg"  type="text" name="name" placeholder="enter name" required>
+		Enter City<input class="form-control form-control-lg"  type="text" name="city" placeholder="enter city" required>
 		<br>
-		Enter Category<input class="form-control form-control-lg"  type="text" name="category" placeholder="enter Category" required>
+		Enter Phone Number<input class="form-control form-control-lg"  type="text" name="phone" placeholder="enter phone number" required>
 		<br>
-		Enter Price<input class="form-control form-control-lg"  type="number" name="price" placeholder="enter price" required>
-		<br>
-		Enter Store ID<input class="form-control form-control-lg"  type="number" name="store_id" placeholder="enter store id" required>
 		<!-- Choose Image<input type="file" name="photo" size="50" > -->
 		<input class="btn bg-dark text-light" type="submit" value="submit" >
 	
 	
 	
 	</form>
+	
 	</div>
 </body>
 </html>

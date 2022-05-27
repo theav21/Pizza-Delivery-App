@@ -16,19 +16,21 @@
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <!--CSS Script-->
     <link rel="stylesheet" href="../css/menu.css">
+     
 </head>
 
 <body>
 <header>
         <nav class="navbar">
+        <%String email =(String)session.getAttribute("email"); %>
             <!-- <input type="checkbox" id="check"> -->
             <!-- <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label> -->
             <img class="logo" src="../img/output-onlinepngtools (10).png" style="width: 10%;">
             <ul>
-                <li class=" nav_item"><a href="Adminehome.jsp">Home</a></li>
+                <li class=" nav_item"><a href="adminHome.jsp">Home</a></li>
                 <li class="nav_item"><a href="addNewStore.jsp">Add New Store</a></li>
                 <li class="nav_item"><a href="addNewPizza.jsp">Add New Pizza</a></li>
-                <li class="nav_item"><a href="index.jsp">logout</a></li>
+                <li class="nav_item"><a href="../index.jsp">logout</a></li>
             </ul>
         </nav>
     </header>
