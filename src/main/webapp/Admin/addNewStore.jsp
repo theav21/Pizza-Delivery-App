@@ -4,7 +4,7 @@
 
 <html>
 <head>
-<title>Add new Pizza</title>
+<title>Add new Store</title>
 </head>
 <body>
 <%
@@ -38,7 +38,7 @@
 	<div class="container">
 	
 	<form action="addNewStoreAction.jsp" method="post">
-	<h1 style="text-align:center;margin-top:20px">Add New Pizza</h1>
+	<h1 style="text-align:center;margin-top:20px">Add New Store</h1>
 	<h3 style="text-align:center;margin-top:50px">Store ID: <% out.println(id); %></h3>
 		<input type="hidden" name="id" value="<%out.println(id); %>">
 		<br>

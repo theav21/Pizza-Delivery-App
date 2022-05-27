@@ -11,6 +11,17 @@
 <!-- <link rel="stylesheet" href="../css/style.css"> -->
 </head>
 <body>
+<%
+	String msg=request.getParameter("msg");
+	if("done".equals(msg)){
+	%>
+	<h1>Store modified!</h1>
+	<%} %>
+	<%
+	if("undone".equals(msg)){
+	%>
+	<h1>Something went wrong!</h1>
+	<%} %>
 	
 	<h1 style="text-align:center;margin:50px">Welcome Admin</h1>
 	<div class = "container row">
@@ -41,7 +52,7 @@
 	    
 	    
 	    <a href="viewItems.jsp?msg=<%=rs.getString(1) %>" class="btn btn-primary" style="background-color:#fac664 ; border-color:white">View Items In Store</a>
-		<a href="viewItems.jsp?msg=<%=rs.getString(1) %>" class="btn btn-primary" style="background-color:#fac664 ; border-color:white">Modify</a>	  
+		<a href="modifyStore.jsp?msg=<%=rs.getString(1) %>" class="btn btn-primary" style="background-color:#fac664 ; border-color:white">Modify</a>	  
 	  </div>
 	</div>
 	<%
