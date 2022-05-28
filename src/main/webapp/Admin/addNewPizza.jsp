@@ -50,6 +50,9 @@
 		<br>
 		Enter Store ID<input class="form-control form-control-lg"  type="number" name="store_id" placeholder="enter store id" required>
 		<!-- Choose Image<input type="file" name="photo" size="50" > -->
+		<br>
+		Enter Image ID<input class="form-control form-control-lg"  type="number" name="img_id" placeholder="enter image id" required>
+		<br>
 		<input class="btn bg-dark text-light" type="submit" value="submit" >
 	
 	

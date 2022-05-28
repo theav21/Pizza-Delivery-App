@@ -30,7 +30,8 @@
                 <li class=" nav_item"><a href="adminHome.jsp">Home</a></li>
                 <li class="nav_item"><a href="addNewStore.jsp">Add New Store</a></li>
                 <li class="nav_item"><a href="addNewPizza.jsp">Add New Pizza</a></li>
-                <li class="nav_item"><a href="../index.jsp">logout</a></li>
+                <li class="nav_item"><a href="viewAllItems.jsp">View All Items</a></li>
+                <li class="nav_item"><a href="../logout.jsp">logout</a></li>
             </ul>
         </nav>
     </header>

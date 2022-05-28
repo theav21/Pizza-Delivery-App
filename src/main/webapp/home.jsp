@@ -1,4 +1,7 @@
+<%@page import="com.db.connection.ConnectionDatabase"%>
+<%@ page import ="java.sql.*" %>
 <%@ include file="header.jsp" %>
+
 <!DOCTYPE html>
 <html>
 
@@ -18,123 +21,54 @@
             <h1>PIZZA</h1>
             <h3>&mdash; MENU &mdash; </h3>
         </div>
+        <%String msg=request.getParameter("msg");
+        if("exist".equals(msg)){
+        %>
+        <h2>Item is already in cart .<b>quantity increased</b> </h2>
+        <%} %>
+        <%
+        if("added".equals(msg)){
+        %>
+        <h2>Item is added to cart!</h2>
+        <%} %>
+        <%
+        if("invalid".equals(msg)){
+        %>
+        <h2>Something went Wrong!</h2>
+        <%} %>
+        <%
+        try{
+        	Connection con=ConnectionDatabase.createConnection();
+        	Statement st = con.createStatement();
+        	ResultSet rs=st.executeQuery("select * from pizza_items");
+        	while(rs.next())
+        	{
+        %>
         <div class="food-items col-md-3 col-sm-4 col-lg-2">
-            <img src="img/chickentikka.png">
+            <img src="img/<%= rs.getString(6) %>.png">
             <div class="details">
                 <div class="details-sub">
-                    <h5>Chiken Tikka Pizza</h5>
-                    <h5 class="price"> 499 </h5>
+                	<h6>Item Id:<%=rs.getString(1) %></h6>
+                	<br>
+                    <h6>Name:<%=rs.getString(2) %></h6>
+                    <br>
+                    <h6>Category:<%=rs.getString(3) %></h6>
+                    <br>
+                    <h6>Price :&#8377 <%=rs.getString(4) %></h6>
                 </div>
-                <p>Spicy and Tangy</p>
-                <button>Add To Cart</button>
+                <p>Store Id : <%=rs.getString(5) %></p>
+                <button><a href="addToCartAction.jsp?id=<%= rs.getString(1) %>" >Add To Cart</a></button>
             </div>
         </div>
+        <%
+        }
+        }
+        catch(Exception e){
+        	System.out.println(e);
+        }%>
 
-        <div class="food-items col-md-3 col-sm-4 col-lg-2">
-            <img src="img/chillipaneer.png">
-            <div class="details">
-                <div class="details-sub">
-                    <h5>Chilli Paneer Pizza</h5>
-                    <h5 class="price"> 319 </h5>
-                </div>
-                <p>Spicy</p>
-                <button>Add To Cart</button>
-            </div>
-        </div>
-
-        <div class="food-items col-md-3 col-sm-4 col-lg-2">
-            <img src="img/magherita.webp">
-            <div class="details">
-                <div class="details-sub">
-                    <h5>Margherita Pizza</h5>
-                    <h5 class="price"> 249 </h5>
-                </div>
-                <p>Sweet and Tangy</p>
-                <button>Add To Cart</button>
-            </div>
-        </div>
-
-        <div class="food-items col-md-3 col-sm-4 col-lg-2">
-            <img src="img/muttonkeema.png">
-            <div class="details">
-                <div class="details-sub">
-                    <h5>Mutton Keema Pizza</h5>
-                    <h5 class="price"> 399 </h5>
-                </div>
-                <p>Spicy</p>
-                <button>Add To Cart</button>
-            </div>
-        </div>
-
-        <div class="food-items col-md-3 col-sm-4 col-lg-2">
-            <img src="img/pizzapuff.png">
-            <div class="details">
-                <div class="details-sub">
-                    <h5>Veg Pizza Puff</h5>
-                    <h5 class="price"> 199 </h5>
-                </div>
-                <p>Spicy</p>
-                <button>Add To Cart</button>
-            </div>
-        </div>
-
-        <div class="food-items col-md-3 col-sm-4 col-lg-2">
-            <img src="img/tadoori paneer.jpg">
-            <div class="details">
-                <div class="details-sub">
-                    <h5>Tandoori Paneer Pizza</h5>
-                    <h5 class="price"> 349 </h5>
-                </div>
-                <p>Spicy</p>
-                <button>Add To Cart</button>
-            </div>
-        </div>
-
-        <div class="food-items col-md-3 col-sm-4 col-lg-2">
-            <img src="img/prawnspizza.png">
-            <div class="details">
-                <div class="details-sub">
-                    <h5>Prawns Pizza</h5>
-                    <h5 class="price"> 389 </h5>
-                </div>
-                <p>Tangy and Spicy</p>
-                <button>Add To Cart</button>
-            </div>
-        </div>
-        <div class="food-items col-md-3 col-sm-4 col-lg-2">
-            <img src="img/veg corn.jpg">
-            <div class="details">
-                <div class="details-sub">
-                    <h5>Veg Corn Pizza</h5>
-                    <h5 class="price"> 319 </h5>
-                </div>
-                <p>Sweet and Cheesy</p>
-                <button>Add To Cart</button>
-            </div>
-        </div>
-        <div class="food-items col-md-3 col-sm-4 col-lg-2">
-            <img src="img/vegmexican.png">
-            <div class="details">
-                <div class="details-sub">
-                    <h5>Veg Mexican Pizza</h5>
-                    <h5 class="price"> 299 </h5>
-                </div>
-                <p>Less Spicy</p>
-                <button>Add To Cart</button>
-            </div>
-        </div>
-        <div class="food-items col-md-3 col-sm-4 col-lg-2">
-            <img src="img/vegperiperi.png">
-            <div class="details">
-                <div class="details-sub">
-                    <h5>Veg Peri Peri Pizza</h5>
-                    <h5 class="price"> 349 </h5>
-                </div>
-                <p>Tangy and Spicy</p>
-                <button>Add To Cart</button>
-            </div>
-        </div>
-        <footer>
+       
+        <footer style="margin-top:20px">
             <p>Copyright &copy; 2022 Pizza Ordering Site</p>
         </footer>
 
