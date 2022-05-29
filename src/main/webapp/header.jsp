@@ -29,10 +29,9 @@
             <ul>
             	<li class=" nav_item"><%out.println(email);%></li>
                 <li class=" nav_item"><a href="home.jsp">Home</a></li>
-                <li class="nav_item"><a href="adminsignin.html">ADMIN</a></li>
                 <li class="nav_item"><a href="storeLoc.html">Store</a></li>
                 <li class="nav_item"><a href="cart.jsp">cart</a></li>
-                <li class="nav_item"><a href="index.jsp">logout</a></li>
+                <li class="nav_item"><a href="logout.jsp">logout</a></li>
             </ul>
         </nav>
     </header>

@@ -15,14 +15,35 @@
 	String msg=request.getParameter("msg");
 	if("done".equals(msg)){
 	%>
-	<h1>Store modified!</h1>
+	  <div id="msg" class="alert alert-success alert-dismissible fade show" style="position:absolute;z-index:2;" role="alert">
+		  <strong>Store Modified!</strong>
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
 	<%} %>
 	<%
 	if("undone".equals(msg)){
 	%>
-	<h1>Something went wrong!</h1>
+	  <div id="msg" class="alert alert-success alert-dismissible fade show" style="position:absolute;z-index:2;" role="alert">
+		  <strong>Something Went Wrong!</strong>
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
 	<%} %>
-	
+	<%
+	if("removed".equals(msg)){
+	%>
+	<div id="msg" class="alert alert-success alert-dismissible fade show" style="position:absolute;z-index:2;" role="alert">
+		  <strong>Removed</strong> 
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	<%} %>
+	<%
+	if("error".equals(msg)){
+	%>
+	<div id="msg" class="alert alert-success alert-dismissible fade show" style="position:absolute;z-index:2;" role="alert">
+		  <strong>Error Occured!</strong> Remove all items from store before removing the store :
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	<%} %>
 	<h1 style="text-align:center;margin:50px">Welcome Admin</h1>
 	<div class = "container row">
 	<h3 style="margin:20px">Pizza Store Details</h3>
@@ -47,12 +68,13 @@
 	<div class="card col-4 m-3" style="width: 18rem;">
 	  <div class="card-body">
 	    <h5 class="card-title">Store ID : <%=rs.getString(1) %></h5>
-	
-	    <p class="card-text">City: <%=rs.getString(2) %> <br> Phone Number: <%=rs.getString(3) %></p>
+		<h4>Address:</h4>
+	    <p class="card-text">State: <%=rs.getString(4) %> <br> City: <%=rs.getString(2) %> <br>Place: <%=rs.getString(5) %> <br>  Phone Number: <%=rs.getString(3) %></p>
 	    
 	    
-	    <a href="viewItems.jsp?msg=<%=rs.getString(1) %>" class="btn btn-primary" style="background-color:#fac664 ; border-color:white">View Items In Store</a>
-		<a href="modifyStore.jsp?msg=<%=rs.getString(1) %>" class="btn btn-primary" style="background-color:#fac664 ; border-color:white">Modify</a>	  
+	    <a href="viewItems.jsp?msg=<%=rs.getString(1) %>&state=<%=rs.getString(4) %>&city=<%=rs.getString(2) %>&place=<%=rs.getString(5) %>" class="btn btn-primary" style="background-color:#fac664 ; border-color:white">View Items In Store</a>
+		<a href="modifyStore.jsp?msg=<%=rs.getString(1) %>" class="btn btn-primary" style="background-color:#fac664 ; border-color:white">Modify</a>
+		<a href="removeStore.jsp?id=<%=rs.getString(1) %>" class="btn btn-primary" style="background-color:#fac664 ; border-color:white">Remove</a>	  
 	  </div>
 	</div>
 	<%

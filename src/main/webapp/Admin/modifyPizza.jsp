@@ -32,8 +32,8 @@
 		{
   %>
 	
-	<form action="addNewPizzaAction.jsp" method="post">
-	<h1 style="text-align:center;margin-top:20px">Add New Pizza</h1>
+	<form action="modifyPizzaAction.jsp" method="post">
+	<h1 style="text-align:center;margin-top:20px">Modify Pizza</h1>
 	<h3 style="text-align:center;margin-top:50px">Pizza ID: <% out.println(id); %></h3>
 		<input type="hidden" name="id" value="<%out.println(id); %>">
 		<br>
@@ -48,7 +48,7 @@
 		<br>
 		Enter Image ID<input class="form-control form-control-lg"  type="number" name="img_id" value="<%=rs.getString(6) %>" required>
 		<br>
-		<input class="btn bg-dark text-light" type="submit" value="submit" >
+		<input class="btn bg-dark text-light" type="submit" value="modify" >
 	
 	
 	

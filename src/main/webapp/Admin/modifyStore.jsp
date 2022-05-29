@@ -36,9 +36,13 @@
 	<h3 style="text-align:center;margin-top:50px">Store ID: <% out.println(msg); %></h3>
 		<input type="hidden" name="id" value="<%out.println(msg); %>">
 		<br>
+		Enter State<input class="form-control form-control-lg"  type="text" name="state" value="<%=rs.getString(4) %>" required>
+		<br>
 		Enter City<input class="form-control form-control-lg"  type="text"  name="city" value="<%=rs.getString(2) %>"  required>
 		<br>
 		Enter Phone Number<input class="form-control form-control-lg"  type="text" name="phone" value="<%=rs.getString(3)%>"  required>
+		<br>
+		Enter Place<input class="form-control form-control-lg"  type="text" name="place" value="<%=rs.getString(5) %>" required>
 		<br>
 		<!-- Choose Image<input type="file" name="photo" size="50" > -->
 		<input class="btn bg-dark text-light" type="submit" value="Modify" >

@@ -50,7 +50,9 @@
           String msg = request.getParameter("msg");
           if("notExist".equals(msg)){
           %>
-          <h4 style="color:red">Your admin email or password is incorrect!</h4>
+            
+			  <strong style="color:red">Your Admin Email or Password Is Incorrect</strong>
+			  
           <%} %>
         </form>
       </div>

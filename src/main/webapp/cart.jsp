@@ -46,7 +46,7 @@ try
                         
                         <h6 class="product-price"><b>Category</b> : <%=rs.getString(3) %></h6>
                         <h6 class="product-price"><b>Price</b> : <i class="fa fa-inr"></i><%=rs.getString(4) %></h6>
-                        <h6 class="product-quantity"><b>Quantity</b> : <a href="incDecQuantity.jsp?id=<%= rs.getString(1)%>quantity=inc"><i class = 'fas fa-plus-circle'></i></a><%=rs.getString(9) %> <a href="incDecQuantity.jsp?id=<%= rs.getString(1)%>quantity=dec"><i class='fas fa-minus-circle'></i></a></h6>
+                        <h6 class="product-quantity"><b>Quantity</b> : <a href="incDecQuantity.jsp?id=<%= rs.getString(1)%>&quantity=inc"><i class = 'fas fa-plus-circle'></i></a><%=rs.getString(9) %> <a href="incDecQuantity.jsp?id=<%= rs.getString(1)%>&quantity=dec"><i class='fas fa-minus-circle'></i></a></h6>
                     	<h6 class="product-price"><b>SubTotal</b> : <i class='fa fa-inr'></i> <%=rs.getString(11) %></h6>      
                                  
                         <p class="product-remove">
@@ -73,7 +73,7 @@ try
                 <p>
                 </p>
                 <%if(total>0){ %>
-                <a href="payment_confirmation.html">Proceed to Checkout</a>
+                <a href="paymentForm.jsp">Proceed to Checkout</a>
             	<%} %>
             </div>
         </div>

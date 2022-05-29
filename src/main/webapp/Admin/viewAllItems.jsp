@@ -7,27 +7,52 @@
 	String msg=request.getParameter("msg");
 	if("done".equals(msg)){
 	%>
-	<h1>Pizza Details modified!</h1>
+	<div id="msg" class="alert alert-success alert-dismissible fade show" style="position:absolute;z-index:2;" role="alert">
+		  <strong>Pizza Details Modified!</strong>
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
 	<%} %>
 	<%
 	if("undone".equals(msg)){
 	%>
-	<h1>Something went wrong!</h1>
+	<div id="msg" class="alert alert-success alert-dismissible fade show" style="position:absolute;z-index:2;" role="alert">
+		  <strong>Something Went Wrong</strong>
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
 	<%} %>
+	<%
+	if("removed".equals(msg)){
+	%>
+	<div id="msg" class="alert alert-danger alert-dismissible fade show" style="position:absolute;z-index:2;" role="alert">
+		  <strong>Pizza Removed From Database</strong>
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	<%} %>
+	<%
+	if("error".equals(msg)){
+	%>
+	<div id="msg" class="alert alert-danger alert-dismissible fade show" style="position:absolute;z-index:2;" role="alert">
+		  <strong>Something Went Wrong!</strong>
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	<%} %>
+	
 <table class="table" style="background-color:#fac664">
   <thead>
     <tr>
-      <th scope="col">ID</th>
+      <th scope="col">Pizza ID</th>
       <th scope="col">Pizza Name</th>
       <th scope="col">Category</th>
       <th scope="col">Price</th>
       <th scope="col">Store Id</th>
       <th scope="col">Image Id</th>
       <th scope="col">Modify</th>
+       <th scope="col">Delete Items</th>
     </tr>
   </thead>
   <tbody>
   <%
+  int i=0;
   try{
 		Connection con=ConnectionDatabase.createConnection();
 		Statement st=con.createStatement();
@@ -44,6 +69,7 @@
 		
 		while(rs.next())
 		{
+			i=i+1;
   %>
     <tr>
       <th scope="row"><%=rs.getString(1) %></th>
@@ -53,10 +79,20 @@
       <td><a href="viewItems.jsp?msg=<%= rs.getString(5) %>"><%=rs.getString(5) %></a></td>
       <td><a href="viewImages.jsp?id=<%= rs.getString(6) %>"><%=rs.getString(6) %></a></td>
       <td><a href="modifyPizza.jsp?id=<%= rs.getString(1) %>">Modify</a></td>
+      <td><a href="removeItems.jsp?id=<%= rs.getString(1) %>">Remove</a></td>
       
     </tr>
+    <%} %>
+   
     <%
-	}
+	   	if(i==0){ %>
+    <tr>
+        <td align="center" colspan="8">No Pizza Added</td>
+    </tr>
+    
+    <%} %>
+    <%
+	
 	}catch(Exception e){
 		System.out.print(e);
 	}%>

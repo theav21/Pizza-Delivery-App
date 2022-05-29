@@ -4,8 +4,12 @@
 <div class = "container">
 <%
   int msg = Integer.parseInt(request.getParameter("msg"));
+  String state=request.getParameter("state");
+  String city=request.getParameter("city");
+  String place =request.getParameter("place");
 %>
-<h2 style="margin:30px">Store ID : <%out.println(msg); %></h2>
+<h2 style="margin-top:10px">Store ID : <%out.print(msg); %><h4 style="margin-bottom:30px"> <b>Address</b> : State: <%out.print(state); %>, City: <%out.print(city); %>, Place: <%out.print(place); %></h4></h2>
+
 <table class="table" style="background-color:#fac664">
   <thead>
     <tr>
@@ -14,10 +18,12 @@
       <th scope="col">Category</th>
       <th scope="col">Price</th>
       <th scope="col">Modify</th>
+      <th scope="col">Remove</th>
     </tr>
   </thead>
   <tbody>
   <%
+  int i=0;
   try{
 		Connection con=ConnectionDatabase.createConnection();
 		Statement st=con.createStatement();
@@ -34,6 +40,7 @@
 		
 		while(rs.next())
 		{
+			i=i+1;
   %>
     <tr>
       <th scope="row"><%=rs.getString(1) %></th>
@@ -41,9 +48,17 @@
       <td><%=rs.getString(3) %></td>
       <td><%=rs.getString(4) %></td>
       <td><a href="modifyPizza.jsp?id=<%= rs.getString(1) %>">Modify</a></td>
+      <td><a href="removeItems.jsp?id=<%= rs.getString(1) %>">Remove</a></td>
     </tr>
+     <%}
+	   	if(i==0){ %>
+    <tr>
+        <td align="center" colspan="6">No Pizza Added</td>
+    </tr>
+    
+    <%} %>
     <%
-	}
+	
 	}catch(Exception e){
 		System.out.print(e);
 	}%>

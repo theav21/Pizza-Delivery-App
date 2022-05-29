@@ -3,18 +3,18 @@
 
 <%
 String email=session.getAttribute("email").toString();
-String product_id=request.getParameter("id");
+String id=request.getParameter("id");
 try
 {
 
 	Connection con = ConnectionDatabase.createConnection();
 	Statement st= con.createStatement();
-	st.executeUpdate("delete from cart where email='"+email+"' and product_id='"+product_id+"' and address is NULL");
-	response.sendRedirect("cart.jsp?msg=removed");
+	st.executeUpdate("delete from pizza_items where id='"+id+"'");
+	response.sendRedirect("viewAllItems.jsp?msg=removed");
 	}
 	catch(Exception e)
 	{
 		System.out.println(e);
-		response.sendRedirect("cart.jsp?msg=error");
+		response.sendRedirect("viewAllItems.jsp?msg=error");
 	}
 %>

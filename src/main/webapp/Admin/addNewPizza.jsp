@@ -11,12 +11,18 @@
 	String msg=request.getParameter("msg");
 	if("done".equals(msg)){
 	%>
-	<h1>Pizza Added!</h1>
+	  <div id="msg" class="alert alert-success alert-dismissible fade show" style="position:absolute;z-index:2;" role="alert">
+		  <strong>Pizza is added!</strong>
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
 	<%} %>
 	<%
 	if("undone".equals(msg)){
 	%>
-	<h1>Something went wrong!</h1>
+	  <div id="msg" class="alert alert-danger alert-dismissible fade show" style="position:absolute;z-index:2;" role="alert">
+		  <strong>Something Went Wrong !</strong>
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
 	<%} %>
 	
 	<%
