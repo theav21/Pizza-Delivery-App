@@ -2,7 +2,7 @@
 <%@page import="com.db.connection.ConnectionDatabase"%>
 <%@ page import ="java.sql.*" %>
 
-<div class = "container">
+
 <%
 	String msg=request.getParameter("msg");
 	if("done".equals(msg)){
@@ -36,7 +36,7 @@
 		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 		</div>
 	<%} %>
-	
+	<div class = "container">
 <table class="table" style="background-color:#fac664">
   <thead>
     <tr>

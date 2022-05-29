@@ -22,6 +22,7 @@
 <body>
 <header>
         <nav class="navbar">
+        
         <%String email=(String)session.getAttribute("email"); %>
             <!-- <input type="checkbox" id="check"> -->
             <!-- <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label> -->
@@ -29,10 +30,13 @@
             <ul>
             	<li class=" nav_item"><%out.println(email);%></li>
                 <li class=" nav_item"><a href="home.jsp">Home</a></li>
-                <li class="nav_item"><a href="storeLoc.html">Store</a></li>
+                <li class="nav_item"><a href="searchPage2.jsp">Store</a></li>
                 <li class="nav_item"><a href="cart.jsp">cart</a></li>
                 <li class="nav_item"><a href="logout.jsp">logout</a></li>
+                
             </ul>
+           
+	     	
         </nav>
     </header>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"

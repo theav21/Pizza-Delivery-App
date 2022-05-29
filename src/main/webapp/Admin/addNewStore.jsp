@@ -19,7 +19,7 @@
 	<%
 	if("undone".equals(msg)){
 	%>
-	  <div id="msg" class="alert alert-success alert-dismissible fade show" style="position:absolute;z-index:2" role="alert">
+	  <div id="msg" class="alert alert-danger alert-dismissible fade show" style="position:absolute;z-index:2" role="alert">
 		  <strong>Something Went Wrong!</strong>
 		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 		</div>

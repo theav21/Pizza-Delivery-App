@@ -212,7 +212,7 @@
 
           <a href="orderplacement.html"><button class="btn" type="button">Proceed To Checkout</button></a>
 
-          <a href="menu.html"><button class="btn" type="button">Return To Cart</button></a>
+          <a href="cart.jsp"><button class="btn" type="button">Return To Cart</button></a>
 
       </div>
     </div>

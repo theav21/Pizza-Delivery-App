@@ -18,7 +18,7 @@
     <%String msg=request.getParameter("msg");
         if("exist".equals(msg)){
         %>
-        <div id="msg" class="alert alert-success alert-dismissible fade show" style="position:absolute;z-index:2;right:0px" role="alert">
+        <div id="msg" class="alert alert-success alert-dismissible fade show" style="position:absolute;z-index:2;left:0px" role="alert">
 		  <strong>Item is already in cart!</strong>Quantity Increased 
 		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 		</div>
@@ -26,23 +26,34 @@
         <%
         if("added".equals(msg)){
         %>
-        <div class="alert alert-success alert-dismissible fade show" style="position:absolute;z-index:2;right:0px" role="alert">
-		  <strong>Item is added!</strong> 
+        <div class="alert alert-success alert-dismissible fade show" style="position:absolute;z-index:2;left:0px" role="alert">
+		  <strong>Item is added to cart!</strong> 
 		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 		</div>
         <%} %>
         <%
         if("invalid".equals(msg)){
         %>
-        <div class="alert alert-danger alert-dismissible fade show" style="position:absolute;z-index:2;right:0px" role="alert">
+        <div class="alert alert-danger alert-dismissible fade show" style="position:absolute;z-index:2;left:0px" role="alert">
 		  <strong>Something went Wrong!</strong>
 		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 		</div>
         <%} %>
     <div class="menu row" >
         <div class="heading">
-            <h1>PIZZA</h1>
-            <h3>&mdash; MENU &mdash; </h3>
+        <div class="row align-items-center" >
+        	<div class="col-9">
+	            <h1>PIZZA</h1>
+	            <h3>&mdash; MENU &mdash; </h3>
+            </div>
+            <div class="col-3">
+            <h6>Search Below For Your Nearby Stores</h6>
+             <form action="searchPage.jsp" method="post" class="d-flex m-3 " style="position:relative;padding-right:10px">
+		        <input class="form-control me-2" type="search" name="search" placeholder="Enter location" aria-label="Search">
+		        <button class="btn btn-outline-warning text-white" type="submit">Search</button>
+	     	</form>
+	     	</div>
+	     </div>
         </div>
        
         <%

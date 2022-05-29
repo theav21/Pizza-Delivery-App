@@ -59,7 +59,7 @@
 		<br>
 		Enter Image ID<input class="form-control form-control-lg"  type="number" name="img_id" placeholder="enter image id" required>
 		<br>
-		<input class="btn bg-dark text-light" type="submit" value="submit" >
+		<input class="btn bg-dark text-light" type="submit" value="add" >
 	
 	
 	
