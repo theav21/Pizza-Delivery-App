@@ -87,6 +87,10 @@
         %>
         <h3 id="msg" style="text-align: center; color:green">registered successfully</h3>
         <%} %>
+        <% if("exist".equals(msg)){
+        %>
+        <h3 id="msg" style="text-align: center; color:red">Email is already registered!</h3>
+       <%} %>
         <% if("invalid".equals(msg)){
         %>
         <h3 id="msg" style="text-align: center; color:red">Error!</h3>
